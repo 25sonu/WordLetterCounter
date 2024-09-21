@@ -1,31 +1,33 @@
-import React from "react"
+import React, {useState} from "react"
 
-function WordletterCounter() {
+function WordLetterCounter() {
   const [text, setText] =
-        useState("");
+        useState(" ");
 
-        WordCount= text.split(/\s+/).filter(Boolean).length
-        letterCount= text.length
+       const wordCount= text.split(/\s+/).filter(Boolean).length
+       const letterCount= text.length
         
         const handleTextChange=(e)=> {
           setText(e.target.value)
         }
+        
+
   return(
     <div>
-       <textarea
+       <textArea
        placeholder="type something here"
        onChange={
           handleTextChange}
           value={text}
           rows={5}
-          cols={50}
+          columns={50}
           />
           <p>
             Word Count= {wordCount}
           </p>
           <p>
-          Letter Count:{" "}
-          {letterCount}
+          Letter Count:{letterCount}
+          
           </p>
     </div>
   )
